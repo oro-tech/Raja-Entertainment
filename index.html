@@ -1,0 +1,150 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Darkest Rebellion Download</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 🔹 Preloader -->
+  <div id="preloader">
+    <img src="Images/TEAM LOGO.png" alt="Team Logo" />
+  </div>
+
+  <!-- 🔹 Top Navigation -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="Images/TeamLogo.png" alt="Team Logo" class="nav-logo" />
+      <div class="nav-links">
+        <a href="#" class="nav-link" onclick="goHome()">Home</a>
+        <a href="#" class="nav-link" onclick="openModal('aboutModal')">About Us</a>
+        <a href="#" class="nav-link" onclick="openModal('aboutGameModal')">About Game</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🔹 Center Wrapper -->
+  <div class="center-wrapper" id="homeSection">
+    <main class="card">
+      <img src="Images/TITLE2.png" alt="Darkest Rebellion"
+           style="max-width: 100%; height: 220px; object-fit: contain; margin-bottom: 0;">
+      <p>Click the button below to download the Windows installer.</p>
+      <a id="downloadLink" class="download-btn" href="Darkest Rebellion.exe" download>
+        Download Game (Windows .exe)
+      </a>
+      <div class="muted" id="filesize">File size: —</div>
+    </main>
+  </div>
+
+  <!-- 🔹 Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-follow">
+        <span>Follow Us on:</span>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/share/1AsFfweJph/" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
+          <a href="https://www.tiktok.com/" target="_blank"><img src="Images/tiktok.png" alt="TikTok"></a>
+          <a href="https://github.com/" target="_blank"><img src="Images/githubOrig.png" alt="GitHub"></a>
+        </div>
+      </div>
+      <p>© <span id="year"></span> Raja Entertainment</p>
+    </div>
+  </footer>
+
+  <!-- 🔹 About Us Modal -->
+  <div class="modal" id="aboutModal">
+    <div class="modal-content">
+      <h2>About Us</h2>
+      <div class="profiles">
+        <div class="profile">
+          <img src="Images/Roger.jpg" alt="Roger Quilang">
+          <p>Roger Quilang</p>
+          <div class="role">Programmer</div>
+          <div class="social-header">Social Media</div>
+          <div class="social-icons small-icons">
+            <a href="https://www.facebook.com/roger.delacruz.quilang" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
+             <a href="https://www.instagram.com/dippzziee/"><img src="Images/instagram.png" alt="Instagram"></a>
+          </div>
+        </div>
+
+        <div class="profile">
+          <img src="Images/Arian.jpg" alt="Arian Paul Languido">
+          <p>Arian Paul Languido</p>
+          <div class="role">Artist/Designer</div>
+          <div class="social-header">Social Media</div>
+          <div class="social-icons small-icons">
+            <a href="https://www.facebook.com/share/1CSMhorty4/" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
+            <a href="https://www.tiktok.com/@arie_1221?_t=ZS-90N6B2JLHRo&_r=1"><img src="Images/tiktok.png" alt="TikTok"></a>
+            <a href="https://www.instagram.com/arian_111202?igsh=YzJtaDA5bWlyemZl"><img src="Images/instagram.png" alt="Instagram"></a>
+          </div>
+        </div>
+
+        <div class="profile">
+          <img src="Images/Joshua.jpg" alt="Marc Joshua Tuppal">
+          <p>Marc Joshua Tuppal</p>
+          <div class="role">Technical</div>
+          <div class="social-header">Social Media</div>
+          <div class="social-icons small-icons">
+            <a href="https://www.facebook.com/share/1CpLamBZ4E/" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
+            <a href="https://l.facebook.com/l.php?u=http%3A%2F%2Ftiktok.com%2F%40cloudplaysz&h=AT08QEJ433-yJXztxHFQ27itsFUbTpYAo-YhL1GKxzQPPuq6vgdy8_Ajab9-OG_69Pu6xSsq0vilM7pofP9FdZKZ4BGzY82Mq_eFhdATydB2mCbSeYQsu3Zbp67TU0k&s=1"><img src="Images/tiktok.png" alt="TikTok"></a>
+            <a href="#"><img src="Images/instagram.png" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 About Game Modal -->
+  <div class="modal" id="aboutGameModal">
+    <div class="modal-content">
+      <h2>About the Game</h2>
+      <p class="about-text">
+        Darkest Rebellion is an action-packed RPG adventure that tests your courage and skill.
+        Explore haunted villages, fight monstrous enemies, and uncover the rebellion within the shadows.
+      </p>
+      <p class="about-text">
+        Created by the RAJA Entertainment team — this game is our passion project, blending art, design,
+        and programming to deliver a unique experience inspired by dark fantasy themes.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 🔹 Open modal
+    function openModal(id) {
+      closeAllModals();
+      document.getElementById(id).style.display = "flex";
+      document.getElementById('homeSection').style.display = "none";
+    }
+
+    // 🔹 Go Home (close modals)
+    function goHome() {
+      closeAllModals();
+      document.getElementById('homeSection').style.display = "flex";
+    }
+
+    // 🔹 Close all modals
+    function closeAllModals() {
+      document.querySelectorAll('.modal').forEach(m => m.style.display = "none");
+    }
+
+    // 🔹 Auto detect file size
+    (async function(){
+      const link = document.getElementById('downloadLink').href;
+      try {
+        const resp = await fetch(link, { method:'HEAD' });
+        const size = resp.headers.get('content-length');
+        if (size) {
+          const mb = (parseInt(size, 10) / (1024*1024)).toFixed(2);
+          document.getElementById('filesize').textContent = `File size: ${mb} MB`;
+        }
+      } catch {
+        document.getElementById('filesize').textContent = "File size: (unavailable)";
+      }
+    })();
+  </script>
+</body>
+</html>
