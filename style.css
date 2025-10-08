@@ -66,7 +66,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 80px; /* offset navbar */
+  padding-top: 80px;
   box-sizing: border-box;
 }
 
@@ -96,7 +96,7 @@ body {
 
 .download-btn:hover {
   background: linear-gradient(180deg, #cc2b2b, #a00000);
-  transform: scale(1.03); /* gentle hover effect */
+  transform: scale(1.03);
 }
 
 /* FOOTER */
@@ -116,7 +116,7 @@ footer {
   align-items: center;
 }
 
-/* Bottom-left follow section */
+/* Socials */
 .social-follow {
   position: absolute;
   left: 40px;
@@ -145,7 +145,38 @@ footer {
   filter: brightness(1.2);
 }
 
-/* Smaller icons under profiles */
+/* PROFILES */
+.profiles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.profile {
+  text-align: center;
+  max-width: 220px;
+}
+
+.profile img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.social-header {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.profile .social-icons {
+  justify-content: center;
+  margin-top: 6px;
+}
+
 .profile .social-icons img {
   width: 18px;
   height: 18px;
@@ -181,38 +212,6 @@ footer {
   margin: 0 auto 20px;
   line-height: 1.6;
   color: #ddd;
-}
-
-/* PROFILES */
-.profiles {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.profile {
-  text-align: center;
-  max-width: 220px;
-}
-
-.profile img {
-  width: 200px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-}
-
-.social-header {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #ccc;
-}
-
-.profile .social-icons {
-  justify-content: center;
-  margin-top: 6px;
 }
 
 /* PRELOADER */
