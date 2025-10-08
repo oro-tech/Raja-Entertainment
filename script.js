@@ -1,4 +1,4 @@
-// Set year
+// 🔹 Set footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // 🔹 Open modal
@@ -19,19 +19,34 @@ function closeAllModals() {
   document.querySelectorAll('.modal').forEach(m => m.style.display = "none");
 }
 
-// 🔹 Auto detect file size
-(async function() {
-  const link = document.getElementById('downloadLink').href;
-  try {
-    const resp = await fetch(link, { method: 'HEAD' });
-    const size = resp.headers.get('content-length');
-    if (size) {
-      const mb = (parseInt(size, 10) / (1024 * 1024)).toFixed(2);
-      document.getElementById('filesize').textContent = `File size: ${mb} MB`;
-    } else {
-      document.getElementById('filesize').textContent = "File size: (unavailable)";
-    }
-  } catch {
-    document.getElementById('filesize').textContent = "File size: (unavailable)";
+// 🔹 Background Music Autoplay
+window.addEventListener("load", () => {
+  const music = document.getElementById("bgMusic");
+  const toggleBtn = document.getElementById("musicToggle");
+  let isPlaying = true;
+
+  // Try to play music
+  const playPromise = music.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      console.log("Autoplay blocked — waiting for user interaction.");
+      document.body.addEventListener("click", () => {
+        music.play();
+        isPlaying = true;
+        toggleBtn.textContent = "🔊";
+      }, { once: true });
+    });
   }
-})();
+
+  // Toggle button
+  toggleBtn.addEventListener("click", () => {
+    if (isPlaying) {
+      music.pause();
+      toggleBtn.textContent = "🔇";
+    } else {
+      music.play();
+      toggleBtn.textContent = "🔊";
+    }
+    isPlaying = !isPlaying;
+  });
+});
