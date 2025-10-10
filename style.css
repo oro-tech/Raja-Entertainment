@@ -256,6 +256,36 @@ footer {
   background: #b22222;
 }
 
+/* Falling Coins and Hats */
+#fallingContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.falling-item {
+  position: absolute;
+  top: -100px;
+  width: 40px;
+  height: auto;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
 /* Animations */
 @keyframes logoReveal {
   0% { opacity: 0; transform: scale(0.8); }
