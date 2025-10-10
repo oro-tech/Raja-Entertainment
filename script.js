@@ -49,7 +49,7 @@ window.addEventListener("load", () => {
 
 // 🔹 Falling Coin & Hat Animation
 const fallingContainer = document.getElementById('fallingContainer');
-const items = ['Images/Coin.png', 'Images/Hat.png'];
+const items = ['Images/Coin.png', 'Images/Hat.png', 'Images/Scroll.png'];
 
 function createFallingItem() {
   const img = document.createElement('img');
@@ -73,3 +73,4 @@ function createFallingItem() {
 
 // Create falling items continuously
 setInterval(createFallingItem, 700);
+
